@@ -13,13 +13,14 @@ import com.jdc.mkt.entity.User;
 public class UserService {
 
 	private static final String URL = "jdbc:mysql://localhost:3306/testDb";
+	private static final String HURL= "jdbc:h2:file:./testDb";
 	private static final String USER = "root";
 	private static final String PASSWORD = "admin";
 
 	public Connection getConnection() throws SQLException {
 		// return DriverManager.getConnection(URL, USER, PASSWORD);
 		// return DriverManager.getConnection(URL+"?user=root&password=admin");
-		return DriverManager.getConnection(URL, getProp());
+		return DriverManager.getConnection(HURL, getProp());
 	}
 
 	public Properties getProp() {
