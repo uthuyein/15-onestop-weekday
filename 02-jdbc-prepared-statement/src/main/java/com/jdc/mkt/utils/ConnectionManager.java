@@ -14,6 +14,41 @@ public class ConnectionManager {
 		return DriverManager.getConnection(URL,USER,PASSWORD);
 	}
 	
+	public static void dropTable() {
+		try(var con = getConnection(); 
+				var stmt = con.createStatement()){
+			stmt.addBatch("drop table  product_tbl");
+			stmt.addBatch("drop table category_tbl");
+			stmt.executeBatch();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public static void initData() {
+		try(var con = getConnection(); 
+				var stmt = con.createStatement()){
+			
+			stmt.addBatch("insert into category_tbl(name) values ('%s')"
+					.formatted("Fruits"));
+			stmt.addBatch("insert into category_tbl(name) values ('%s')"
+					.formatted("Drinks"));
+			
+			stmt.addBatch("insert into product_tbl(name,price,category_id) values ('%s',%d,%d)"
+					.formatted("Orange",2000,1));
+			stmt.addBatch("insert into product_tbl(name,price,category_id) values ('%s',%d,%d)"
+					.formatted("Apple",2500,1));
+			stmt.addBatch("insert into product_tbl(name,price,category_id) values ('%s',%d,%d)"
+					.formatted("Lemon Juice",1500,2));
+			
+			stmt.executeBatch();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
 	public static void createTable() {
 		try(var con = getConnection(); 
 			var stmt = con.createStatement()){

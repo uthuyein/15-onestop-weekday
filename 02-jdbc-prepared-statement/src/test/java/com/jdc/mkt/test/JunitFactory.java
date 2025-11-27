@@ -10,7 +10,10 @@ public class JunitFactory {
 	
 	@BeforeAll
 	static void init() {
+		dropTable();
 		createTable();
+		initData();
+		System.out.println("Hello junit");
 	}
 	
 	@Test
