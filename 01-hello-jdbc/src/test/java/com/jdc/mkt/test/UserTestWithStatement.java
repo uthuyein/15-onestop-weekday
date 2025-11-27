@@ -11,19 +11,20 @@ import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.TestMethodOrder;
 
 import com.jdc.mkt.entity.User;
-import com.jdc.mkt.services.UserService;
+import com.jdc.mkt.services.UserServiceWithStatement;
+import static com.jdc.mkt.utils.ConnectionManager.*;
 
 @TestMethodOrder(OrderAnnotation.class)
-public class UserTest {
+public class UserTestWithStatement {
 
-	private static UserService service;
+	private static UserServiceWithStatement service;
 	
 	@BeforeAll
 	static void init() {
-		service = new UserService();
-		service.createTable();
-		service.truncate();
-		service.executBatch();
+		service = new UserServiceWithStatement();
+		createTable();
+		truncate();
+		executBatch();
 	}
 	
 	@Test
