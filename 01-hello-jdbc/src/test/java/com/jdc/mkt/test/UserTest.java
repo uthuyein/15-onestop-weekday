@@ -17,6 +17,9 @@ public class UserTest {
 	@BeforeAll
 	static void init() {
 		service = new UserService();
+		service.createTable();
+		service.truncate();
+		service.executBatch();
 	}
 	
 	@Test
