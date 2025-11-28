@@ -15,7 +15,8 @@ import com.jdc.mkt.utils.anno.Connector;
 		database = DatabaseType.MYSQL, 		
 		name = "saleDb", 
 		user = "root",
-		password = "admin")
+		password = "admin",
+		port="3306")
 public class JunitFactory {
 
 	
