@@ -25,7 +25,7 @@ public class JunitFactory {
 		dropTable();
 		createTable();
 		initData();
-		System.out.println("Hello junit");
+		
 	}
 	
 	@AfterEach

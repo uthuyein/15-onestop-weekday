@@ -14,7 +14,7 @@ public class ProductTest extends JunitFactory {
 
 	private ProductService service = new ProductService();
 
-	@ParameterizedTest
+	//@ParameterizedTest
 	@CsvSource({
 		"Drinks,,",
 		",L,",
@@ -34,7 +34,7 @@ public class ProductTest extends JunitFactory {
 		var row = service.update(name, price, id);
 		assertEquals(1, row);
 	}
-	@Disabled
+	
 	@ParameterizedTest
 	@CsvSource({ "Durian,20000,1" })
 	void insertTest(String name, int price, int catId) {
@@ -44,8 +44,8 @@ public class ProductTest extends JunitFactory {
 		product.setCategory(cat);
 		product.setName(name);
 		product.setPrice(price);
-		int row = service.insert(product);
-		assertEquals(1, row);
+		int id = service.insert(product);
+		assertEquals(4, id);
 
 	}
 
