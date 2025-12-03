@@ -7,12 +7,13 @@ import java.sql.SQLException;
 
 public class AccountService {
 
-	public int update(String from, String to, int balance) throws SQLException {
+	public int transfer(String from, String to, int balance) throws SQLException {
 
 		Connection con = null;
 		try {
 			con = getConnection();
 			con.setAutoCommit(false);
+		//	con.setTransactionIsolation(Connection.TRANSACTION_READ_UNCOMMITTED);
 			var initialBalance = getBalance(from);
 
 			var stmt = con.createStatement();
@@ -33,6 +34,7 @@ public class AccountService {
 			con.commit();
 
 		} catch (Exception e) {
+			System.out.println(e.getMessage());
 			con.rollback();
 		} finally {
 			con.close();

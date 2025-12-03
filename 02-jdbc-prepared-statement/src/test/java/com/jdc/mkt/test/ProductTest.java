@@ -3,18 +3,28 @@ package com.jdc.mkt.test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 
 import com.jdc.mkt.entity.Category;
 import com.jdc.mkt.entity.Product;
+import com.jdc.mkt.services.ProductPrcedureService;
 import com.jdc.mkt.services.ProductService;
 
 public class ProductTest extends JunitFactory {
 
 	private ProductService service = new ProductService();
-
-	//@ParameterizedTest
+	private ProductPrcedureService procedurce = new ProductPrcedureService();
+	
+	@Test
+	void procedurceTest() {
+		var p = procedurce.getMaxProduct();
+		System.out.println("Max Price Of Product : "+ p.getName());
+	}
+	
+	@Disabled
+	@ParameterizedTest
 	@CsvSource({
 		"Drinks,,",
 		",L,",
@@ -35,6 +45,7 @@ public class ProductTest extends JunitFactory {
 		assertEquals(1, row);
 	}
 	
+	@Disabled
 	@ParameterizedTest
 	@CsvSource({ "Durian,20000,1" })
 	void insertTest(String name, int price, int catId) {

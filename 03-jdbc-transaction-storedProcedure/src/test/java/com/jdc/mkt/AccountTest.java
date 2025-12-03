@@ -23,7 +23,7 @@ public class AccountTest {
 
 	@Test
 	void test() throws SQLException {
-		service.update("William", "Andrew", 10000);
+		service.transfer("William", "John", 10000);
 
 	}
 }
