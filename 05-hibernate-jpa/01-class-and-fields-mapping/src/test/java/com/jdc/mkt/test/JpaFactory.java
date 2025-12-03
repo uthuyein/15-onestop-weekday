@@ -12,12 +12,9 @@ public class JpaFactory {
 	
 	@BeforeAll
 	static void init() {
-		emf = Persistence.
-				createEntityManagerFactory("hello-hibernate-jpa");
+		emf = Persistence.createEntityManagerFactory("class-and-fields-mapping");
 	}
 	
 	@Test
-	void test() {
-		
-	}
+	void test() {}
 }
