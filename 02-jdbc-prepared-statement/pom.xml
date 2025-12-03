@@ -5,6 +5,9 @@
 	<groupId>com.jdc.mkt</groupId>
 	<artifactId>02-jdbc-prepared-statement</artifactId>
 	<version>1.0</version>
+	<properties>
+  		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
 	<dependencies>
 		<dependency>
 			<groupId>com.mysql</groupId>
