@@ -16,7 +16,7 @@ public class ProductPrcedureService {
 		 end//
 		
 		 delimiter ;
-
+		call getMaxProduct()
 	 */
 	
 	public Product getMaxProduct() {
