@@ -12,7 +12,7 @@ import lombok.Data;
 @Table(name = "contact_tbl")
 @SecondaryTable(name = "address_tbl")
 @SecondaryTable(name = "email_tbl")
-public class Contact {
+public class B_Contact_Secondary_tbl {
 
 	@Id
 	private int id;

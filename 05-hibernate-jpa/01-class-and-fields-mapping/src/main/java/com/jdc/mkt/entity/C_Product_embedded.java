@@ -9,7 +9,7 @@ import lombok.Data;
 @Data
 @Entity
 @Table(name = "product_tbl")
-public class Product {
+public class C_Product_embedded {
 
 	@Id
 	private int id;

@@ -18,7 +18,7 @@ import lombok.Data;
 	indexes = {
 			@Index(columnList = "name")	
 	})
-public class Category {
+public class A_Category_table_anno {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
