@@ -6,6 +6,8 @@ import java.time.LocalTime;
 import java.util.Calendar;
 import java.util.Date;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -38,14 +40,14 @@ public class F_FieldMapping {
 	@Temporal(TemporalType.TIME)
 	private Calendar calendar;
 	
-	@Column(columnDefinition = "tinyint(1) not null default 1")
+	@ColumnDefault("1")
 	private boolean active;
 	
 	@Transient
 	private  boolean checker;
 	
 	@Enumerated(EnumType.STRING)
-	private Days day;
+	private Days days;
 	
 	public enum Days{
 		Mon,Tue,Wed,Thur,Fri,Sat,Sun
