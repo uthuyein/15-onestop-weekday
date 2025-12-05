@@ -1,5 +1,7 @@
 package com.jdc.mkt;
 
+import java.util.List;
+
 import org.hibernate.annotations.ColumnDefault;
 
 import jakarta.persistence.Column;
@@ -7,6 +9,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -25,7 +28,8 @@ public class Category {
 	@ColumnDefault("1")
 	private boolean active;
 	
-//	@OneToMany
+	
+//	@JoinColumn(name = "cat_id")
 //	@JoinTable(name = "cat_prod_tbl",
 //	joinColumns = {
 //			@JoinColumn(name = "cat_id")
@@ -33,5 +37,13 @@ public class Category {
 //	inverseJoinColumns = {
 //			@JoinColumn(name = "prod_id")
 //	})
-//	private List<Product> products;
+	@OneToMany(mappedBy = "category")
+	private List<Product> products;
+	
+	
 }
+
+
+
+
+

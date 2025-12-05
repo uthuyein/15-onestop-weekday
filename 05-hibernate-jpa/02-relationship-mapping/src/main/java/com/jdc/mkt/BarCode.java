@@ -1,9 +1,8 @@
 package com.jdc.mkt;
 
 import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import lombok.Data;
 
 @Data
@@ -11,8 +10,11 @@ import lombok.Data;
 public class BarCode {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	private String name;
 	private boolean active;
+	
+	@OneToOne(mappedBy = "barcode")
+	//@JoinColumn(insertable = false,updatable = false)
+	private Product product;
 }

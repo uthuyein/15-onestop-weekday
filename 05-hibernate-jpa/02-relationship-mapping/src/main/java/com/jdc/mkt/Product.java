@@ -25,28 +25,32 @@ public class Product {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
-	
-	@Column(length = 45,nullable = false,unique = true)
+
+	@Column(length = 45, nullable = false, unique = true)
 	private String name;
-	
+
 	@ColumnDefault("1")
 	private boolean active;
 	
-	@ManyToOne(optional = false)
-	private Category category;
-	
 	@OneToOne
 	private BarCode barcode;
+
+
 	
+	
+	@ManyToOne
+//	@JoinTable(name = "prod_cat_tbl",
+//	joinColumns = {
+//			@JoinColumn(name = "prod_id")
+//	},
+//	inverseJoinColumns = {
+//			@JoinColumn(name = "cat_id")
+//	})
+	private Category category;
+
 	@ManyToMany
-	@JoinTable(name = "prod_size_tbl",
-		joinColumns = {
-				@JoinColumn(name = "prod_id")
-		},
-		inverseJoinColumns = {
-				@JoinColumn(name = "size_id")
-		})
+	@JoinTable(name = "prod_size_tbl", joinColumns = { @JoinColumn(name = "prod_id") }, inverseJoinColumns = {
+			@JoinColumn(name = "size_id") })
 	private List<Size> sizes;
-	
-	
+
 }
