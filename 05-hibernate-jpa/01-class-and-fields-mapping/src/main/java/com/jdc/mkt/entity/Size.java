@@ -13,4 +13,7 @@ public class Size implements Serializable{
 	
 	private String productSize;
 	private double productLimit;
+	
+//	@ElementCollection
+//	private List<String> values;
 }

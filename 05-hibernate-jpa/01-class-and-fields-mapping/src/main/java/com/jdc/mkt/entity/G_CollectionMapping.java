@@ -29,6 +29,16 @@ public class G_CollectionMapping {
 	private String name;
 	
 	@ElementCollection
+	@MapKeyEnumerated(EnumType.STRING)
+	@Enumerated(EnumType.STRING)
+	private Map<Days, Days> days;
+	
+//	@ElementCollection
+//	@CollectionTable(name = "sizes_tbl")
+//	private List<Size> sizes;
+	
+	
+	@ElementCollection
 	@CollectionTable(
 			name = "list_tbl",
 			joinColumns = {
@@ -56,10 +66,9 @@ public class G_CollectionMapping {
 	@Column(name = "map_value",length = 45)
 	private Map<Integer,String> maps;
 	
-	@ElementCollection
-	@MapKeyEnumerated(EnumType.STRING)
-	@Enumerated(EnumType.STRING)
-	private Map<Days, Days> days;
+	
+	
+	
 	
 	
 }

@@ -39,5 +39,6 @@
   </build>
   <modules>
   	<module>01-class-and-fields-mapping</module>
+  	<module>02-relationship-mapping</module>
   </modules>
 </project>
