@@ -13,7 +13,7 @@ import com.jdc.mkt.utils.anno.Connector;
 
 @Connector(
 		database = DatabaseType.MYSQL, 		
-		name = "saleDb", 
+		name = "testDB", 
 		user = "root",
 		password = "admin",
 		port="3306")

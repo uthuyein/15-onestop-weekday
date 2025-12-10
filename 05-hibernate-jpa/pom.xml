@@ -24,6 +24,12 @@
   	 <version>6.0.1</version>
   	 <scope>test</scope>
   	</dependency>
+  	<dependency>
+  	 <groupId>com.jdc.mkt</groupId>
+  	 <artifactId>PrintLogger</artifactId>
+  	 <version>1.0</version>
+  	 <scope>test</scope>
+  	</dependency>
   </dependencies>
   <build>
   	<plugins>
@@ -40,6 +46,6 @@
   <modules>
   	<module>01-class-and-fields-mapping</module>
   	<module>02-relationship-mapping</module>
-  	<module>03-inheritance-mapping</module>
+  	<module>03-inheritance-converter-mapping</module>
   </modules>
 </project>
