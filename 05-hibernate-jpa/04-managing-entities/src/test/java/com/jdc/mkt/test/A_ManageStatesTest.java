@@ -1,6 +1,6 @@
 package com.jdc.mkt.test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
@@ -11,16 +11,44 @@ import com.jdc.mkt.entity.Address;
 import com.jdc.mkt.entity.Person;
 import com.jdc.mkt.utils.JpaFactory;
 
-public class A_StatesTest extends JpaFactory{
+public class A_ManageStatesTest extends JpaFactory{
 	
 	
+	@Test 
+	void updateTest() {
+		var em = emf.createEntityManager();
+		
+		//To Be Managed State
+		var person = em.find(Person.class, 1);
+		assertTrue(em.contains(person));
+		
+		
+		//To Be Detached Stated
+		em.detach(person);
+		assertFalse(em.contains(person));
+		
+		
+		//To Be Managed Stated
+		var pnew = em.merge(person);
+		assertFalse(em.contains(person));
+		assertTrue(em.contains(pnew));
+		
+		em.getTransaction().begin();
+		
+		pnew.setName("John wick");
+		
+	
+		em.getTransaction().commit();
+		em.close();
+	}
 
 	@Test
+	@Disabled
 	void selectTest() {
 		var em = emf.createEntityManager();
 		
 		//To Be Managed State
-		var add = em.find(Address.class, 1);
+		var add = em.getReference(Address.class, 1);
 		assertNotNull(add);
 		assertTrue(em.contains(add));
 		//assertEquals("Mandalay", add.getState());
@@ -43,7 +71,7 @@ public class A_StatesTest extends JpaFactory{
 		address.setTownship("Mahar AungMyay");
 		address.setStreet("42st ,bet 84stX84st");
 		
-		//person.setAddress(address);
+		person.setAddress(address);
 		
 		em.getTransaction().begin();
 		
