@@ -7,7 +7,7 @@
   
   <properties>
   	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-  	<maven.compiler.release>21</maven.compiler.release>
+  	<maven.compiler.release>25</maven.compiler.release>
   </properties>
   
   <dependencies>
@@ -36,5 +36,6 @@
   </dependencies>
   <modules>
   	<module>01-hiberante-orm-test</module>
+  	<module>02-spendMoney-proj</module>
   </modules>
 </project>
