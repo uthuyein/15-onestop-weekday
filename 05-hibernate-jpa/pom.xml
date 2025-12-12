@@ -49,5 +49,6 @@
   	<module>03-inheritance-converter-mapping</module>
   	<module>04-managing-entities</module>
   	<module>05-synchronized</module>
+  	<module>06-callback-listener</module>
   </modules>
 </project>

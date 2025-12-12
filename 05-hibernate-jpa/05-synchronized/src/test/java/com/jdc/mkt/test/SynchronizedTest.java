@@ -50,7 +50,7 @@ public class SynchronizedTest {
 				em.getTransaction().commit();
 				em.close();
 
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
@@ -79,7 +79,7 @@ public class SynchronizedTest {
 				em.getTransaction().commit();
 				em.close();
 
-			} catch (InterruptedException e) {
+			} catch (Exception e) {
 				e.printStackTrace();
 			}
 		});
