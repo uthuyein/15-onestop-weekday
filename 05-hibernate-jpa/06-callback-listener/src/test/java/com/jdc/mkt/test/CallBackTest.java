@@ -25,6 +25,9 @@ public class CallBackTest {
 		
 		em.getTransaction().begin();
 		em.persist(teacher);
+		System.out.println(teacher.getTimes());
+		teacher.setName("John");
+		
 		em.getTransaction().commit();
 		
 		em.close();

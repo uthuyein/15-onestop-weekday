@@ -1,5 +1,8 @@
 package com.jdc.mkt.entity;
 
+import com.jdc.mkt.listener.EnableEntityListener;
+import com.jdc.mkt.listener.Times;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -8,7 +11,7 @@ import lombok.Data;
 
 @Data
 @Entity
-public class Account {
+public class Account implements EnableEntityListener{
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -16,4 +19,5 @@ public class Account {
 	private String username;
 	private String loginId;
 	private String password;
+	private Times times;
 }

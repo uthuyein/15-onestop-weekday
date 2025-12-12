@@ -1,6 +1,7 @@
 package com.jdc.mkt.entity;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.ExcludeDefaultListeners;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -8,6 +9,8 @@ import lombok.Data;
 
 @Data 
 @Entity
+//@EntityListeners(EntityListener.class)
+@ExcludeDefaultListeners
 public class Course {
 
 	@Id
