@@ -12,6 +12,6 @@ import lombok.EqualsAndHashCode;
 public class Admin extends Account{
 	
 	public Admin() {
-		setType(Type.Admin);
+		setAccountType(AccountType.Admin);
 	}
 }

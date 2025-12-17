@@ -18,7 +18,7 @@ import lombok.EqualsAndHashCode;
 public class Customer extends Account{
 
 	@Enumerated(EnumType.STRING)
-	private MemberType member;
+	private MemberType memberType;
 	
 	@OneToOne(cascade = {CascadeType.PERSIST,CascadeType.MERGE})
 	private Address address;
@@ -26,10 +26,11 @@ public class Customer extends Account{
 	private Contact contact;
 	
 	public Customer() {
-		setType(Type.Customer);
+		setAccountType(AccountType.Customer);
 	}
 	
 	public enum MemberType{
 		NoMember,Silver,Gold,Diamond
 	}
+	
 }

@@ -32,9 +32,9 @@ public class Account {
 	private boolean active;
 	
 	@Enumerated(EnumType.STRING)
-	private Type type;
+	private AccountType accountType;
 	
-	public enum Type{
+	public enum AccountType{
 		Customer,Cashier,Admin
 	}
 }

@@ -8,10 +8,10 @@ import jakarta.persistence.Persistence;
 
 public class JpaFactory {
 
-	static EntityManagerFactory emf;
+	protected static EntityManagerFactory emf;
 	
 	@BeforeAll
-	static void init() {
+	protected static void init() {
 		emf = Persistence.createEntityManagerFactory("entity-of-product");
 	}
 	

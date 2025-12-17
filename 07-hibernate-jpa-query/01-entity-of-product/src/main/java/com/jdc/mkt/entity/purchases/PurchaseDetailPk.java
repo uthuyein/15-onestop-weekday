@@ -15,5 +15,5 @@ public class PurchaseDetailPk implements Serializable {
 	@Column(name = "product_id")
 	private int productId;
 	@Column(name = "purchase_id")
-	private UUID purchaseId;
+	private int purchaseId;
 }

@@ -23,8 +23,8 @@ import lombok.Data;
 public class Purchase {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
 	private Supplier supplier;
