@@ -22,6 +22,9 @@ public class C_QueryResult_With_Params_Test extends JpaFactory{
 		long count = query.getSingleResult();
 		System.out.println("Count :"+count);
 	}
-	void getResultStream() {}
+	void getResultStream() {
+		
+		
+	}
 	void executeUpdate() {}
 }
