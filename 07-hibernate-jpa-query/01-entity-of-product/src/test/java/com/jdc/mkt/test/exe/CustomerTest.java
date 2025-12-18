@@ -1,4 +1,4 @@
-package com.jdc.mkt.test.customer;
+package com.jdc.mkt.test.exe;
 
 import com.jdc.mkt.test.JpaFactory;
 
