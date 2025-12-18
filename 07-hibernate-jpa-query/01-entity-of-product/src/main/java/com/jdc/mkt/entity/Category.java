@@ -10,6 +10,9 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Data;
 
+
+
+
 @Data
 @Entity
 @Table(name = "category_tbl")
@@ -24,4 +27,7 @@ public class Category {
 	
 	@ColumnDefault("1")
 	private boolean active;
+	
+	
 }
+

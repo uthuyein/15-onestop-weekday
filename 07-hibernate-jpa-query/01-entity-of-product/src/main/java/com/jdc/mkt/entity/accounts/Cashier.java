@@ -11,7 +11,7 @@ import lombok.EqualsAndHashCode;
 @EqualsAndHashCode(callSuper = false)
 public class Cashier extends Account{
 	
-	public Cashier() {
+	public Cashier() {		
 		setAccountType(AccountType.Cashier);
 	}
 }

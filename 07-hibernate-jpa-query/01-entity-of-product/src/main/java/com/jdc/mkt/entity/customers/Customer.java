@@ -6,6 +6,7 @@ import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
+import jakarta.persistence.NamedQuery;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -15,6 +16,12 @@ import lombok.EqualsAndHashCode;
 @Entity
 @Table(name = "customer_tbl")
 @EqualsAndHashCode(callSuper = false)
+@NamedQuery(
+		name = "Customer.selectCustomerByNameLike",
+		query = "select c from Customer c where lower(c.username) like lower(?1)")
+@NamedQuery(
+		name = "Customer.selectCustomerByEmail",
+		query = "select cu from Customer cu where cu.contact.email = ?1")
 public class Customer extends Account{
 
 	@Enumerated(EnumType.STRING)

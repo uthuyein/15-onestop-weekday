@@ -40,16 +40,16 @@ insert into contact_tbl(primaryPhone,secondaryPhone,email)values('09-213459','09
 insert into contact_tbl(primaryPhone,secondaryPhone,email)values('09-321456','09-232329','hawsey@gmail.com');
 insert into contact_tbl(primaryPhone,secondaryPhone,email)values('09-321457','09-232320','martin@gmail.com');
 
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Andrew','andrew11','123','Customer','Silver');
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('John','john11','124','Customer','Gold');
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Derrek','derrek11','125','Customer','Diamond');
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Mercy','mercy11','126','Customer','Silver');
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Annie','annie11','127','Customer','Gold');
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Marrie','marrie11','128','Customer','Diamond');
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Herry','herry11','129','Customer','Silver');          
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Elle','elle11','212','Customer','Gold');           
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Halcy','hawsey11','213','Customer','Diamond');          
-insert into customer_tbl(username,loginId,password,accountType,memberType)values('Martin','martin11','214','Customer','Silver');         
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Andrew','andrew11','123','Customer','Silver',1,1);
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('John','john11','124','Customer','Gold',2,2);
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Derrek','derrek11','125','Customer','Diamond',3,3);
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Mercy','mercy11','126','Customer','Silver',4,4);
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Annie','annie11','127','Customer','Gold',5,5);
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Marrie','marrie11','128','Customer','Diamond',6,6);
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Herry','herry11','129','Customer','Silver',7,7);          
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Elle','elle11','212','Customer','Gold',8,8);           
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Halcy','hawsey11','213','Customer','Diamond',9,9);          
+insert into customer_tbl(username,loginId,password,accountType,memberType,address_id,contact_id)values('Martin','martin11','214','Customer','Silver',10,10);         
 
 
 insert into category_tbl(name) values('Snacks');
