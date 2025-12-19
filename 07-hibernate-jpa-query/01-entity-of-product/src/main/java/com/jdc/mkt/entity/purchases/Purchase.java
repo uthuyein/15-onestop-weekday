@@ -2,7 +2,6 @@ package com.jdc.mkt.entity.purchases;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.UUID;
 
 import com.jdc.mkt.entity.Supplier;
 import com.jdc.mkt.entity.accounts.Admin;
@@ -19,7 +18,7 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name = "pruchase_tbl")
+@Table(name = "purchase_tbl")
 public class Purchase {
 
 	@Id

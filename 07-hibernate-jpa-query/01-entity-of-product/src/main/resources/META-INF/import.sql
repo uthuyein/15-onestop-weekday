@@ -78,6 +78,9 @@ insert into admin_tbl(username,loginId,password,accountType) values ('Elle','ell
 insert into admin_tbl(username,loginId,password,accountType) values ('Halcy','halcy11','213','Cashier');
 insert into admin_tbl(username,loginId,password,accountType) values ('Martin','martin11','214','Admin');
 
+insert into cashier_tbl (username, loginId, password, accountType) values ('Gojo', 'gojo', '123', 'Cashier');
+insert into cashier_tbl (username, loginId, password, accountType) values ('Megumi', 'megumi', '456', 'Cashier');
+
 insert into supplier_tbl(name) values ('John Doe');
 insert into supplier_tbl(name) values ('Andrew Saw');
 insert into supplier_tbl(name) values ('Derrek J');
@@ -89,13 +92,38 @@ insert into supplier_tbl(name) values ('Elle Venus');
 insert into supplier_tbl(name) values ('Halcy Grace');
 insert into supplier_tbl(name) values ('Martin Drew');
 
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-12','02:20:11',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-13','02:20:12',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-14','02:20:13',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-15','02:20:14',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-16','02:20:15',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-17','02:20:16',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-18','02:20:17',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-19','02:20:18',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-21','02:20:19',1);
---insert into purchase_tbl(admin_id,createDate,createTime,supplier_id) values (1,'2022-10-22','02:20:21',1);
+insert into purchase_tbl (admin_id, createDate, createTime, supplier_id) values (1, '2022-10-12', '02:20:11', 1);
+insert into purchase_tbl (admin_id, createDate, createTime, supplier_id) values (2, '2022-11-05', '10:15:30', 2);
+insert into purchase_tbl (admin_id, createDate, createTime, supplier_id) values (1, '2022-12-01', '14:45:00', 3);
+insert into purchase_tbl (admin_id, createDate, createTime, supplier_id) values (2, '2023-01-10', '09:20:15', 1);
+insert into purchase_tbl (admin_id, createDate, createTime, supplier_id) values (1, '2023-02-18', '13:50:40', 2);
+insert into purchase_tbl (admin_id, createDate, createTime, supplier_id) values (2, '2023-03-22', '11:05:30', 3);
+
+insert into purchase_detail_tbl (product_id, purchase_id, price, qty) values (1, 1, 500, 30);
+insert into purchase_detail_tbl (product_id, purchase_id, price, qty) values (2, 2, 800, 20);
+insert into purchase_detail_tbl (product_id, purchase_id, price, qty) values (3, 3, 450, 40);
+insert into purchase_detail_tbl (product_id, purchase_id, price, qty) values (1, 4, 500, 25);
+insert into purchase_detail_tbl (product_id, purchase_id, price, qty) values (2, 5, 800, 30);
+insert into purchase_detail_tbl (product_id, purchase_id, price, qty) values (3, 6, 450, 35);
+
+insert into sale_tbl (customer_id, cashier_id, saleDate, saleTime) values (1, 1, '2025-05-20', '04:25:10');
+insert into sale_tbl (customer_id, cashier_id, saleDate, saleTime) values (2, 2, '2025-05-21', '05:10:30');
+insert into sale_tbl (customer_id, cashier_id, saleDate, saleTime) values (3, 1, '2025-05-22', '06:40:15');
+insert into sale_tbl (customer_id, cashier_id, saleDate, saleTime) values (1, 2, '2025-05-23', '07:15:50');
+insert into sale_tbl (customer_id, cashier_id, saleDate, saleTime) values (2, 1, '2025-05-24', '08:30:20');
+insert into sale_tbl (customer_id, cashier_id, saleDate, saleTime) values (3, 2, '2025-05-25', '09:50:45');
+
+insert into sale_price_tbl (product_id, price, createDate) values (1, 500, '2022-10-30');
+insert into sale_price_tbl (product_id, price, createDate) values (2, 800, '2022-10-30');
+insert into sale_price_tbl (product_id, price, createDate) values (3, 450, '2022-10-30');
+insert into sale_price_tbl (product_id, price, createDate) values (1, 500, '2022-11-10');
+insert into sale_price_tbl (product_id, price, createDate) values (2, 800, '2022-11-15');
+insert into sale_price_tbl (product_id, price, createDate) values (3, 450, '2022-11-20');
+
+INSERT INTO sale_detail_tbl (sale_id, salePrice_id, qty, subTotal, saleDate, saleTime) VALUES (1, 1, 2, 1000, '2025-05-20', '04:25:10');
+INSERT INTO sale_detail_tbl (sale_id, salePrice_id, qty, subTotal, saleDate, saleTime) VALUES (2, 2, 1, 800, '2025-05-21', '05:10:30');
+INSERT INTO sale_detail_tbl (sale_id, salePrice_id, qty, subTotal, saleDate, saleTime) VALUES (3, 3, 3, 1350, '2025-05-22', '06:40:15');
+INSERT INTO sale_detail_tbl (sale_id, salePrice_id, qty, subTotal, saleDate, saleTime) VALUES (4, 4, 1, 500, '2025-05-23', '07:15:50');
+INSERT INTO sale_detail_tbl (sale_id, salePrice_id, qty, subTotal, saleDate, saleTime) VALUES (5, 5, 2, 1600, '2025-05-24', '08:30:20');
+INSERT INTO sale_detail_tbl (sale_id, salePrice_id, qty, subTotal, saleDate, saleTime) VALUES (6, 6, 1, 450, '2025-05-25', '09:50:45');
+

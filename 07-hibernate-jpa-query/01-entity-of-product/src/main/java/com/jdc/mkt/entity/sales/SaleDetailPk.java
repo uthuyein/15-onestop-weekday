@@ -2,7 +2,6 @@ package com.jdc.mkt.entity.sales;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Embeddable;
@@ -13,10 +12,10 @@ import lombok.Data;
 public class SaleDetailPk {
 
 	@Column(name = "sale_id",insertable = false,updatable = false)
-	private UUID saleId;
+	private int saleId;
 	
 	@Column(name = "salePrice_id",insertable = false,updatable = false)
-	private UUID salePriceId;
+	private int salePriceId;
 	
 	private LocalDate saleDate;
 	private LocalTime saleTime;

@@ -1,7 +1,6 @@
 package com.jdc.mkt.entity.sales;
 
 import java.time.LocalDate;
-import java.util.UUID;
 
 import com.jdc.mkt.entity.Product;
 
@@ -19,8 +18,8 @@ import lombok.Data;
 public class SalePrice {
 
 	@Id
-	@GeneratedValue(strategy = GenerationType.UUID)
-	private UUID id;
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private int id;
 	
 	@ManyToOne
 	private Product product;
