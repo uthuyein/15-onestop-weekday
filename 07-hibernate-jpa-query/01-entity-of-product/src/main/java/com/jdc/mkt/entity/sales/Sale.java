@@ -2,6 +2,7 @@ package com.jdc.mkt.entity.sales;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.util.List;
 
 import com.jdc.mkt.entity.accounts.Cashier;
 import com.jdc.mkt.entity.customers.Customer;
@@ -12,6 +13,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.Data;
 
@@ -29,6 +31,9 @@ public class Sale {
 	
 	@ManyToOne(optional = false)
 	private Cashier cashier;
+	
+	@OneToMany(mappedBy = "sale")
+	private List<SaleDetail> saleDetails;
 	
 	private LocalDate saleDate;
 	private LocalTime saleTime;
