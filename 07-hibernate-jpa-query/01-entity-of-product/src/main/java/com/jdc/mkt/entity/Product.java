@@ -1,8 +1,12 @@
 package com.jdc.mkt.entity;
 
+import java.util.List;
+
 import org.hibernate.annotations.ColumnDefault;
 
 import com.jdc.mkt.entity.dto.SelectProduct;
+import com.jdc.mkt.entity.purchases.PurchaseDetail;
+import com.jdc.mkt.entity.sales.SalePrice;
 
 import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
@@ -15,6 +19,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import jakarta.persistence.NamedNativeQuery;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.SqlResultSetMapping;
 import jakarta.persistence.Table;
 import lombok.Data;
@@ -58,7 +63,10 @@ public class Product {
 	@ManyToOne(fetch = FetchType.LAZY,cascade = CascadeType.PERSIST)
 	private ProductSize productSize;
 	
-//	@OneToMany(mappedBy = "product")
-//	private List<SalePrice> salePrices;
+	@OneToMany(mappedBy = "product")
+	private List<SalePrice> salePrices;
+	
+	@OneToMany(mappedBy = "product")
+	private List<PurchaseDetail> purchaseDetails;
 	
 }
